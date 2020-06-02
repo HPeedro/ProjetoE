@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
+const Loja = mongoose.model('Loja');
 const url = require('url');
 const dbuser = require('../dbusuario') 
 
@@ -20,7 +21,7 @@ router.get('/index/carrinho',(req,res,next)=>{
 });
 
 router.get('/index', (req, res, next) => {
-    Product
+    Loja
         .find({
             active: true
         }, /*'title price slug'*/ )
