@@ -20,7 +20,7 @@ router.get('/pedido', (req, res, next) => {
             // res.status(200).send(data);
             let user = dbuser.getUsuario();
             res.render('pedido.ejs', {
-                 user
+                 user, type
             });
 
 });

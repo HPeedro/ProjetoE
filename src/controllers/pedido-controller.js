@@ -38,7 +38,7 @@ exports.get = async (req, res, next) => {
         
 
         res.render('carrinho.ejs',{
-            userid,user,lista:data,preco
+            userid,user,lista:data,preco,type
         });
 
       //  res.status(200).send(data);
@@ -65,7 +65,7 @@ exports.post = async(req, res, next) => {
     .then(x=>{
         let user = dbuser.getUsuario();
         res.render('pedido.ejs', {
-            user
+            user, type
        });
     }).catch(e =>{
         res.render('novoLogin');
