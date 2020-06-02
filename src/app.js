@@ -10,11 +10,13 @@ mongoose.connect('mongodb+srv://pedro:pedro@pucc01-httmr.mongodb.net/baltaio?ret
 const Product = require('./models/product');
 const Pedido = require('./models/pedido');
 const User = require('./models/user');
+const Loja = require('./models/loja');
 //carrega as rotas
 const apiTeste = require('./routes/index-route');
 const productsRoute = require('./routes/product-route');
 const userRoute = require('./routes/user-route');
 const pedidoRoute = require('./routes/pedido-route');
+const lojaRoute = require('./routes/loja-route');
 
 app.use(express.static('./src/public/'));
 app.set('views', './src/public/views');
@@ -29,4 +31,5 @@ app.use('/', apiTeste);
 app.use('/products', productsRoute);
 app.use('/user', userRoute);
 app.use('/pedido',pedidoRoute);
+app.use('/lojas', lojaRoute)
 module.exports = app;
