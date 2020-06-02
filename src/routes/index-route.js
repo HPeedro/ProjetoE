@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
-const Loja = mongoose.model('Loja');
+const User = mongoose.model('User');
 const url = require('url');
 const dbuser = require('../dbusuario') 
 
@@ -22,9 +22,10 @@ router.get('/index/carrinho',(req,res,next)=>{
 });
 
 router.get('/index', (req, res, next) => {
-    Loja
+    User
         .find({
-            active: true
+            active: true,
+            type: "loja"
         }, /*'title price slug'*/ )
         .then(data => {
             let user = dbuser.getUsuario();
