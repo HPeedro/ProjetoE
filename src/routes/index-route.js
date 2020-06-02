@@ -17,6 +17,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/index/carrinho',(req,res,next)=>{
     let user = dbuser.getUsuario();
+    let type = dbuser.getType();
    res.redirect('http://localhost:3000/pedido/ped');
 });
 
@@ -27,10 +28,11 @@ router.get('/index', (req, res, next) => {
         }, /*'title price slug'*/ )
         .then(data => {
             let user = dbuser.getUsuario();
+            let type = dbuser.getType();
             //console.log(user);
             // res.status(200).send(data);
             res.render('index.ejs', {
-                lista: data , user
+                lista: data , user, type
             });
         }).catch(e => {
             res.status(400).send({
@@ -45,8 +47,9 @@ router.get('/usuario', (req, res, next) => {
     console.log(req.query);
             // res.status(200).send(data);
             let user = dbuser.getUsuario();
+            let type = dbuser.getType();
             res.render('usuario.ejs', {
-                 user
+                 user, type
             });
 
 });
@@ -59,8 +62,9 @@ router.get('/index/products', (req, res, next) => {
         .then(data => {
             // res.status(200).send(data);
             let user = dbuser.getUsuario();
+            let type = dbuser.getType();
             res.render('products.ejs', {
-                lista: data ,user
+                lista: data ,user, type
             });
         }).catch(e => {
             res.status(400).send({
@@ -77,9 +81,10 @@ router.get('/product/:id', (req, res, next) => {
         })
         .then(data => {
             let user = dbuser.getUsuario();
+            let type = dbuser.getType();
             console.log(user);
              res.render('product.ejs', {
-                 lista: data,user
+                 lista: data, user, type
              });
         }).catch(e => {
             res.status(400).send({
@@ -98,9 +103,10 @@ router.get('/index/unautorized',(req,res,next)=>{
 
 router.get('/index/logout',(req,res,next)=>{
     let user = dbuser.getUsuario();
+    let type = dbuser.getType();
     dbuser.doLogout();
     res.render('logout.ejs',{
-        user
+        user, type
     });
 });
 
@@ -112,10 +118,15 @@ router.get('/cadastroproduto',(req,res)=>{
     res.render('cadastroProduto.ejs');
 });
 
+router.get('/cadastroloja',(req,res)=>{
+    res.render('cadastroLoja.ejs');
+});
+
 router.get('/sucesso',(req,res)=>{
     let user = dbuser.getUsuario();
+    let type = dbuser.getType();
     res.render('realizadoComSucesso.ejs',{
-        user
+        user, type
     });
 });
 module.exports = router;

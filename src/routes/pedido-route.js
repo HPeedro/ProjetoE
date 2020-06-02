@@ -15,6 +15,7 @@ module.exports = router;
 
 router.get('/pedido', (req, res, next) => {
     let usuario = req.query;
+    let type = dbuser.getType();
     console.log(req.query);
             // res.status(200).send(data);
             let user = dbuser.getUsuario();

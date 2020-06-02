@@ -23,6 +23,7 @@ exports.get = async (req, res, next) => {
  exports.getById = async (req, res, next) => {
     let userid = dbuser.getId();
     let user = dbuser.getUsuario();
+    let type = dbuser.getType();
     Pedido.find({
         customer: userid
     })
@@ -51,6 +52,7 @@ exports.get = async (req, res, next) => {
 
 exports.post = async(req, res, next) => {
     let userid = dbuser.getId();
+    let type = dbuser.getType();
    let pedidoC ={
         "customer":userid,
         "items":[{

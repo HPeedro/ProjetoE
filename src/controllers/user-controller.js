@@ -6,6 +6,7 @@ const querystring = require('querystring');
 const dbuser = require('../dbusuario'); 
 
 exports.post = (req, res, next) => {
+    let type = dbuser.getType();
     var user = new User(req.body);
     user
         .save()
@@ -20,6 +21,7 @@ exports.post = (req, res, next) => {
 
 }
 exports.get = (req, res, next) => {
+    let type = dbuser.getType();
     User
         .find({})
         .then(data => {
@@ -32,6 +34,7 @@ exports.get = (req, res, next) => {
 };
 
 exports.getByCpf = (req, res, next) => {
+    let type = dbuser.getType();
     User
         .find({
             cpf: req.params.cpf
@@ -46,6 +49,7 @@ exports.getByCpf = (req, res, next) => {
 };
 
 exports.doLogin = (req, res, next) => {
+    let type = dbuser.getType();
     User.findOne({
         email: req.query.email,
         senha: req.query.senha
@@ -57,9 +61,10 @@ exports.doLogin = (req, res, next) => {
         const query = querystring.stringify({
             "nome":data.name,
             "cpf":data.cpf,
-            "id":data._id+''
+            "id":data._id+'',
+            "type":data.type
         });
-        dbuser.saveUsuario(data.name,data.id,data.cpf);
+        dbuser.saveUsuario(data.name,data.id,data.cpf,data.type);
         res.redirect('http://localhost:3000/index');
       }
     }).catch(e => {

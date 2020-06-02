@@ -24,9 +24,13 @@
 
     <!-- Main CSS-->
     <link href="../css/main1.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <a href="http://localhost:3000/index" >Home</a>
 
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
@@ -35,14 +39,19 @@
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
                     <form method="POST"  action="http://localhost:3000/user"> 
+                        <select  name="type" id="type" class="browser-default custom-select">
+                            <option selected>Tipo de Registro</option>
+                            <option value="user" name="type" id="user">User</option>
+                            <option value="loja" name="type" id="loja">Loja</option>
+                          </select>
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
-                                    <label class="label">Usuario</label>
+                                    <label class="label">Usuario ou Nome da Loja</label>
                                     <input class="input--style-4" type="text" name="name" required="required">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Senha</label>
                                     <input class="input--style-4" type="password" name="senha" id="password" required="required">
@@ -66,7 +75,7 @@
                             </div>
                         </div>
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
@@ -83,19 +92,33 @@
                             </div>
                         </div>
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Email</label>
                                     <input class="input--style-4" type="email" name="email" required="required">
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">CPF</label>
                                     <input class="input--style-4" type="text" name="cpf" required="required">
                                 </div>
                             </div>
                         </div>
+                        <div>
+                          <div class="col-12">
+                            <div class="input-group">
+                                <label class="label">descrição da loja</label>
+                                <input class="input--style-4" type="text" name="description">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group">
+                                <label class="label">Url da imagem</label>
+                                <input class="input--style-4" type="text" name="url">
+                            </div>
+                        </div>
+                    </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>

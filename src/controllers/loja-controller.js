@@ -20,8 +20,6 @@ exports.post = (req, res, next) => {
         });
 };
 exports.get = (req, res, next) => {
-    console.log("HERE");
-    console.log(Loja);
     Loja
         .find({
             active: true

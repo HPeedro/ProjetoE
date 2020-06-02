@@ -6,6 +6,10 @@ const schema = new Schema({
         type:String,
         required:true
     },
+    type:{
+        type:String,
+        required:true
+    },
     cpf:{
         type:Number,
         required:true
@@ -15,6 +19,14 @@ const schema = new Schema({
         required:true
     },
     senha:{
+        type:String,
+        required:true
+    },
+    url:{
+        type:String,
+        required:true
+    },
+    description:{
         type:String,
         required:true
     }
