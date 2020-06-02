@@ -73,6 +73,26 @@ router.get('/index/products', (req, res, next) => {
         });
 });
 
+router.get('/products/:loja', (req, res, next) => {
+    Product
+        .find({
+            active: true,
+            loja: req.params.loja
+        }, /*'title price slug'*/ )
+        .then(data => {
+            // res.status(200).send(data);
+            let user = dbuser.getUsuario();
+            let type = dbuser.getType();
+            res.render('products.ejs', {
+                lista: data ,user, type
+            });
+        }).catch(e => {
+            res.status(400).send({
+                e
+            });
+        });
+});
+
 router.get('/product/:id', (req, res, next) => {
     Product
         .find({
