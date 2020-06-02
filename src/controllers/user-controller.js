@@ -55,7 +55,9 @@ exports.doLogin = (req, res, next) => {
         senha: req.query.senha
     }).then(data => {
       if(data === null){
-        res.render('wrongUser.ejs');
+        res.render('wrongUser.ejs', {
+            type
+        });
 
       }else{
         const query = querystring.stringify({

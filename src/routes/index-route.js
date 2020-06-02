@@ -118,7 +118,10 @@ router.get('/index/login',(req,res,next)=>{
 });
 
 router.get('/index/unautorized',(req,res,next)=>{
-    res.render('wrongUser.ejs');
+    let type = null;
+    res.render('wrongUser.ejs', {
+        type
+    });
 });
 
 router.get('/index/logout',(req,res,next)=>{
