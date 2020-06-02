@@ -22,7 +22,6 @@
               <li><a href="http://localhost:3000/index/products">Todos os produtos</a></li>
               <% if (type == "loja") { %>
                 <li><a href="http://localhost:3000/cadastroproduto">Cadastrar Produto</a></li>
-                <li><a href="http://localhost:3000/cadastroloja">Cadastrar Loja</a></li>
               <%}%>
             </ul>
           </li>
@@ -66,7 +65,7 @@
       <article class="group">
         <div class="one_half first">
           <p>Lançamento</p> <br>
-          <h6 class="heading underline font-x2"><%=lista[1].title%></h6>
+          <h6 class="heading underline font-x2"><%=lista[1].name%></h6>
           <p class="btmspace-30"><%=lista[1].description%>&hellip;</p>
           <footer><a class="btn" href="/product/<%=lista[1].id%>">Saiba mais</a>
           
@@ -93,7 +92,7 @@
         <li class="one_third">
           <article><a href="#"><i class="fab fa-fort-awesome"></i></a>
             <img class="borderedbox inspace-10" src=<%=lista[i].url %> alt="">
-            <h6 class="heading"> <%=lista[i].nome %></h6>
+            <h6 class="heading"> <%=lista[i].name %></h6>
             <footer><a href="/product/<%=lista[i].id%>"<i class="fas fa-arrow-right"></i></a></footer>
           </article>
         </li>

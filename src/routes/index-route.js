@@ -24,13 +24,12 @@ router.get('/index/carrinho',(req,res,next)=>{
 router.get('/index', (req, res, next) => {
     User
         .find({
-            active: true,
             type: "loja"
         }, /*'title price slug'*/ )
         .then(data => {
             let user = dbuser.getUsuario();
             let type = dbuser.getType();
-            //console.log(user);
+            //console.log(data);
             // res.status(200).send(data);
             res.render('index.ejs', {
                 lista: data , user, type
@@ -117,10 +116,6 @@ router.get('/cadastrousuario',(req,res)=>{
 
 router.get('/cadastroproduto',(req,res)=>{
     res.render('cadastroProduto.ejs');
-});
-
-router.get('/cadastroloja',(req,res)=>{
-    res.render('cadastroLoja.ejs');
 });
 
 router.get('/sucesso',(req,res)=>{
