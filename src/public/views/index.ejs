@@ -67,7 +67,7 @@
           <p>Lançamento</p> <br>
           <h6 class="heading underline font-x2"><%=lista[1].name%></h6>
           <p class="btmspace-30"><%=lista[1].description%>&hellip;</p>
-          <footer><a class="btn" href="/products/<%=lista[1].id%>">Saiba mais</a>
+          <footer><a class="btn" href="/products/<%=lista[1].name%>">Saiba mais</a>
           
             <!--<a class="btn">Comprar</a>-->
           </footer>
@@ -93,7 +93,7 @@
           <article><a href="#"><i class="fab fa-fort-awesome"></i></a>
             <img class="borderedbox inspace-10" src=<%=lista[i].url %> alt="">
             <h6 class="heading"> <%=lista[i].name %></h6>
-            <footer><a href="/products/<%=lista[i].id%>"<i class="fas fa-arrow-right"></i></a></footer>
+            <footer><a href="/products/<%=lista[i].name%>"<i class="fas fa-arrow-right"></i></a></footer>
           </article>
         </li>
         <% } %>
