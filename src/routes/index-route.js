@@ -135,7 +135,10 @@ router.get('/cadastrousuario',(req,res)=>{
 });
 
 router.get('/cadastroproduto',(req,res)=>{
-    res.render('cadastroProduto.ejs');
+    let user = dbuser.getUsuario();
+    res.render('cadastroProduto.ejs', {
+        user
+    });
 });
 
 router.get('/sucesso',(req,res)=>{

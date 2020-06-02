@@ -35,6 +35,12 @@
                 <div class="card-body">
                     <h2 class="title">Cadastro de Produto</h2>
                     <form method="POST"  action="http://localhost:3000/products"> 
+                        <div class="col-8">
+                            <div class="input-group">
+                                <label class="label">Nome da Loja</label>
+                                <input class="input--style-4" type="text" value="<%=user%>" disabled name="loja">
+                            </div>
+                        </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
